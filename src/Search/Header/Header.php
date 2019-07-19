@@ -1,21 +1,23 @@
 <?php
 
-namespace Ddeboer\Imap\Search\Text;
+declare(strict_types=1);
+
+namespace Ddeboer\Imap\Search\Header;
 
 use Ddeboer\Imap\Search\AbstractText;
 
 /**
- * Class Header
+ * Class Header.
  *
  * @author Philip Maaß <PhilipMaaß@aol.com>
  */
-class Header extends AbstractText
+final class Header extends AbstractText
 {
     /**
      * @return string
      */
     protected function getKeyword(): string
     {
-        return "HEADER";
+        return 'HEADER';
     }
 }
