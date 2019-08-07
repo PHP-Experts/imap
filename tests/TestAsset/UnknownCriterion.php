@@ -8,7 +8,7 @@ use Ddeboer\Imap\Search\ConditionInterface;
 
 final class UnknownCriterion implements ConditionInterface
 {
-    public function toString(): string
+    public function toString()
     {
         return \uniqid('NON_EXISTENT_CRITERION_');
     }

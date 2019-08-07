@@ -86,7 +86,7 @@ abstract class AbstractTest extends TestCase
         $mailbox->addMessage($messageString);
     }
 
-    final protected function getFixture(string $fixture): string
+    final protected function getFixture(string $fixture)
     {
         $content = \file_get_contents(\sprintf('%s/fixtures/%s.eml', __DIR__, $fixture));
         static::assertIsString($content);

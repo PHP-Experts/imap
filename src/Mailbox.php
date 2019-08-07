@@ -52,7 +52,7 @@ final class Mailbox implements MailboxInterface
      *
      * @return string
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->name;
     }
@@ -62,7 +62,7 @@ final class Mailbox implements MailboxInterface
      *
      * @return string
      */
-    public function getEncodedName(): string
+    public function getEncodedName()
     {
         /** @var string $name */
         $name = $this->info->name;
@@ -75,7 +75,7 @@ final class Mailbox implements MailboxInterface
      *
      * @return string
      */
-    public function getFullEncodedName(): string
+    public function getFullEncodedName()
     {
         return $this->info->name;
     }
@@ -85,7 +85,7 @@ final class Mailbox implements MailboxInterface
      *
      * @return int
      */
-    public function getAttributes(): int
+    public function getAttributes()
     {
         return $this->info->attributes;
     }
@@ -95,7 +95,7 @@ final class Mailbox implements MailboxInterface
      *
      * @return string
      */
-    public function getDelimiter(): string
+    public function getDelimiter()
     {
         return $this->info->delimiter;
     }
@@ -311,7 +311,7 @@ final class Mailbox implements MailboxInterface
      *
      * @throws \Ddeboer\Imap\Exception\MessageMoveException
      */
-    public function move($numbers, MailboxInterface $mailbox): void
+    public function move($numbers, MailboxInterface $mailbox)
     {
         if (!\imap_mail_move($this->resource->getStream(), $this->prepareMessageIds($numbers), $mailbox->getEncodedName(), \CP_UID)) {
             throw new MessageMoveException(\sprintf('Messages cannot be moved to "%s"', $mailbox->getName()));
@@ -326,7 +326,7 @@ final class Mailbox implements MailboxInterface
      *
      * @throws \Ddeboer\Imap\Exception\MessageCopyException
      */
-    public function copy($numbers, MailboxInterface $mailbox): void
+    public function copy($numbers, MailboxInterface $mailbox)
     {
         if (!\imap_mail_copy($this->resource->getStream(), $this->prepareMessageIds($numbers), $mailbox->getEncodedName(), \CP_UID)) {
             throw new MessageCopyException(\sprintf('Messages cannot be copied to "%s"', $mailbox->getName()));
@@ -340,7 +340,7 @@ final class Mailbox implements MailboxInterface
      *
      * @return string
      */
-    private function prepareMessageIds($messageIds): string
+    private function prepareMessageIds($messageIds)
     {
         if ($messageIds instanceof MessageIterator) {
             $messageIds = $messageIds->getArrayCopy();

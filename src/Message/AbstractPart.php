@@ -160,7 +160,7 @@ abstract class AbstractPart implements PartInterface
      *
      * @return int
      */
-    final public function getNumber(): int
+    final public function getNumber()
     {
         $this->assertMessageExists($this->messageNumber);
 
@@ -172,14 +172,14 @@ abstract class AbstractPart implements PartInterface
      *
      * @param int $messageNumber
      */
-    protected function assertMessageExists(int $messageNumber): void
+    protected function assertMessageExists(int $messageNumber)
     {
     }
 
     /**
      * @param \stdClass $structure Part structure
      */
-    final protected function setStructure(\stdClass $structure): void
+    final protected function setStructure(\stdClass $structure)
     {
         $this->structure = $structure;
     }
@@ -199,7 +199,7 @@ abstract class AbstractPart implements PartInterface
     /**
      * Lazy load structure.
      */
-    protected function lazyLoadStructure(): void
+    protected function lazyLoadStructure()
     {
     }
 
@@ -316,7 +316,7 @@ abstract class AbstractPart implements PartInterface
      *
      * @return string
      */
-    final public function getContent(): string
+    final public function getContent()
     {
         if (null === $this->content) {
             $this->content = $this->doGetContent($this->getContentPartNumber());
@@ -330,7 +330,7 @@ abstract class AbstractPart implements PartInterface
      *
      * @return string
      */
-    protected function getContentPartNumber(): string
+    protected function getContentPartNumber()
     {
         return $this->partNumber;
     }
@@ -340,7 +340,7 @@ abstract class AbstractPart implements PartInterface
      *
      * @return string
      */
-    final public function getPartNumber(): string
+    final public function getPartNumber()
     {
         return $this->partNumber;
     }
@@ -350,7 +350,7 @@ abstract class AbstractPart implements PartInterface
      *
      * @return string
      */
-    final public function getDecodedContent(): string
+    final public function getDecodedContent()
     {
         if (null === $this->decodedContent) {
             if (self::ENCODING_UNKNOWN === $this->getEncoding()) {
@@ -387,7 +387,7 @@ abstract class AbstractPart implements PartInterface
      *
      * @return string
      */
-    final protected function doGetContent(string $partNumber): string
+    final protected function doGetContent(string $partNumber)
     {
         $return = \imap_fetchbody(
             $this->resource->getStream(),
@@ -494,7 +494,7 @@ abstract class AbstractPart implements PartInterface
     /**
      * Parse part structure.
      */
-    private function lazyParseStructure(): void
+    private function lazyParseStructure()
     {
         if (true === $this->structureParsed) {
             return;

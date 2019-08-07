@@ -17,7 +17,7 @@ final class Text extends AbstractText
      *
      * @return string
      */
-    protected function getKeyword(): string
+    protected function getKeyword()
     {
         return 'TEXT';
     }

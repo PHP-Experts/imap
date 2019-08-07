@@ -136,7 +136,7 @@ final class Server implements ServerInterface
      *
      * @return string
      */
-    private function getServerString(): string
+    private function getServerString()
     {
         return \sprintf(
             '{%s%s%s}',

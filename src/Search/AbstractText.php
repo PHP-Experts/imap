@@ -32,7 +32,7 @@ abstract class AbstractText implements ConditionInterface
      *
      * @return string
      */
-    final public function toString(): string
+    final public function toString()
     {
         return \sprintf('%s "%s"', $this->getKeyword(), $this->text);
     }
@@ -42,5 +42,5 @@ abstract class AbstractText implements ConditionInterface
      *
      * @return string
      */
-    abstract protected function getKeyword(): string;
+    abstract protected function getKeyword();
 }

@@ -27,7 +27,7 @@ class Parameters extends \ArrayIterator
     /**
      * @param array $parameters
      */
-    public function add(array $parameters = []): void
+    public function add(array $parameters = [])
     {
         foreach ($parameters as $parameter) {
             $key = \strtolower($parameter->attribute);
@@ -56,7 +56,7 @@ class Parameters extends \ArrayIterator
      *
      * @return string
      */
-    final protected function decode(string $value): string
+    final protected function decode(string $value)
     {
         $parts = \imap_mime_header_decode($value);
         if (!\is_array($parts)) {

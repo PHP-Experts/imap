@@ -8,7 +8,7 @@ use Ddeboer\Imap\Search\AbstractDate;
 
 final class FooDate extends AbstractDate
 {
-    protected function getKeyword(): string
+    protected function getKeyword()
     {
         return 'BAR';
     }

@@ -17,7 +17,7 @@ final class Seen implements ConditionInterface
      *
      * @return string
      */
-    public function toString(): string
+    public function toString()
     {
         return 'SEEN';
     }

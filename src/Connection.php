@@ -189,7 +189,7 @@ final class Connection implements ConnectionInterface
      *
      * @throws DeleteMailboxException
      */
-    public function deleteMailbox(MailboxInterface $mailbox): void
+    public function deleteMailbox(MailboxInterface $mailbox)
     {
         if (false === \imap_deletemailbox($this->resource->getStream(), $mailbox->getFullEncodedName())) {
             throw new DeleteMailboxException(\sprintf('Mailbox "%s" could not be deleted', $mailbox->getName()));
@@ -202,7 +202,7 @@ final class Connection implements ConnectionInterface
     /**
      * Get mailbox names.
      */
-    private function initMailboxNames(): void
+    private function initMailboxNames()
     {
         if (null !== $this->mailboxNames) {
             return;

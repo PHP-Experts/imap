@@ -11,14 +11,14 @@ interface BasicMessageInterface extends PartInterface
      *
      * @return string
      */
-    public function getRawHeaders(): string;
+    public function getRawHeaders();
 
     /**
      * Get the raw message, including all headers, parts, etc. unencoded and unparsed.
      *
      * @return string the raw message
      */
-    public function getRawMessage(): string;
+    public function getRawMessage();
 
     /**
      * Get message headers.

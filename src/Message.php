@@ -62,7 +62,7 @@ final class Message extends Message\AbstractMessage implements MessageInterface
     /**
      * Lazy load structure.
      */
-    protected function lazyLoadStructure(): void
+    protected function lazyLoadStructure()
     {
         if (true === $this->structureLoaded) {
             return;
@@ -102,7 +102,7 @@ final class Message extends Message\AbstractMessage implements MessageInterface
      *
      * @param int $messageNumber
      */
-    protected function assertMessageExists(int $messageNumber): void
+    protected function assertMessageExists(int $messageNumber)
     {
         if (true === $this->messageNumberVerified) {
             return;
@@ -122,7 +122,7 @@ final class Message extends Message\AbstractMessage implements MessageInterface
         ));
     }
 
-    private function getMsgNo(): int
+    private function getMsgNo()
     {
         // Triggers assertMessageExists()
         $this->getNumber();
@@ -135,7 +135,7 @@ final class Message extends Message\AbstractMessage implements MessageInterface
      *
      * @return string
      */
-    public function getRawHeaders(): string
+    public function getRawHeaders()
     {
         if (null === $this->rawHeaders) {
             $rawHeaders = \imap_fetchheader($this->resource->getStream(), $this->getNumber(), \FT_UID);
@@ -155,7 +155,7 @@ final class Message extends Message\AbstractMessage implements MessageInterface
      *
      * @return string the raw message
      */
-    public function getRawMessage(): string
+    public function getRawMessage()
     {
         if (null === $this->rawMessage) {
             $this->rawMessage = $this->doGetContent('');
@@ -189,7 +189,7 @@ final class Message extends Message\AbstractMessage implements MessageInterface
     /**
      * Clearmessage headers.
      */
-    private function clearHeaders(): void
+    private function clearHeaders()
     {
         $this->headers = null;
     }
@@ -295,7 +295,7 @@ final class Message extends Message\AbstractMessage implements MessageInterface
      *
      * @throws MessageCopyException
      */
-    public function copy(MailboxInterface $mailbox): void
+    public function copy(MailboxInterface $mailbox)
     {
         // 'deleted' header changed, force to reload headers, would be better to set deleted flag to true on header
         $this->clearHeaders();
@@ -312,7 +312,7 @@ final class Message extends Message\AbstractMessage implements MessageInterface
      *
      * @throws MessageMoveException
      */
-    public function move(MailboxInterface $mailbox): void
+    public function move(MailboxInterface $mailbox)
     {
         // 'deleted' header changed, force to reload headers, would be better to set deleted flag to true on header
         $this->clearHeaders();
@@ -327,7 +327,7 @@ final class Message extends Message\AbstractMessage implements MessageInterface
      *
      * @throws MessageDeleteException
      */
-    public function delete(): void
+    public function delete()
     {
         // 'deleted' header changed, force to reload headers, would be better to set deleted flag to true on header
         $this->clearHeaders();
@@ -342,7 +342,7 @@ final class Message extends Message\AbstractMessage implements MessageInterface
      *
      * @throws MessageUndeleteException
      */
-    public function undelete(): void
+    public function undelete()
     {
         // 'deleted' header changed, force to reload headers, would be better to set deleted flag to false on header
         $this->clearHeaders();

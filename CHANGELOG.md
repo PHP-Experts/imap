@@ -208,7 +208,7 @@
 **Implemented enhancements:**
 
 - Make imap\_append\(\) optional arguments reachable [\#280](https://github.com/ddeboer/imap/pull/280) ([Slamdunk](https://github.com/Slamdunk))
-- PHPStan: introduce static analysis [\#276](https://github.com/ddeboer/imap/pull/276) ([Slamdunk](https://github.com/Slamdunk))
+- PHPStanroduce static analysis [\#276](https://github.com/ddeboer/imap/pull/276) ([Slamdunk](https://github.com/Slamdunk))
 
 **Fixed bugs:**
 

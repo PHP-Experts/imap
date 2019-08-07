@@ -40,7 +40,7 @@ final class EmbeddedMessage extends AbstractMessage implements EmbeddedMessageIn
      *
      * @return string
      */
-    public function getRawHeaders(): string
+    public function getRawHeaders()
     {
         if (null === $this->rawHeaders) {
             $rawHeaders       = \explode("\r\n\r\n", $this->getRawMessage(), 2);
@@ -55,7 +55,7 @@ final class EmbeddedMessage extends AbstractMessage implements EmbeddedMessageIn
      *
      * @return string the raw message
      */
-    public function getRawMessage(): string
+    public function getRawMessage()
     {
         if (null === $this->rawMessage) {
             $this->rawMessage = $this->doGetContent($this->getPartNumber());
@@ -69,7 +69,7 @@ final class EmbeddedMessage extends AbstractMessage implements EmbeddedMessageIn
      *
      * @return string
      */
-    protected function getContentPartNumber(): string
+    protected function getContentPartNumber()
     {
         $partNumber = $this->getPartNumber();
         if (0 === \count($this->getParts())) {

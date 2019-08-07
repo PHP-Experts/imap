@@ -58,7 +58,7 @@ final class EmailAddress
      *
      * @return string
      */
-    public function getFullAddress(): string
+    public function getFullAddress()
     {
         $address = \sprintf('%s@%s', $this->mailbox, $this->hostname);
         if (null !== $this->name) {
@@ -71,7 +71,7 @@ final class EmailAddress
     /**
      * @return string
      */
-    public function getMailbox(): string
+    public function getMailbox()
     {
         return $this->mailbox;
     }

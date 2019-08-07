@@ -17,35 +17,35 @@ interface MailboxInterface extends \Countable, \IteratorAggregate
      *
      * @return string
      */
-    public function getName(): string;
+    public function getName();
 
     /**
      * Get mailbox encoded path.
      *
      * @return string
      */
-    public function getEncodedName(): string;
+    public function getEncodedName();
 
     /**
      * Get mailbox encoded full name.
      *
      * @return string
      */
-    public function getFullEncodedName(): string;
+    public function getFullEncodedName();
 
     /**
      * Get mailbox attributes.
      *
      * @return int
      */
-    public function getAttributes(): int;
+    public function getAttributes();
 
     /**
      * Get mailbox delimiter.
      *
      * @return string
      */
-    public function getDelimiter(): string;
+    public function getDelimiter();
 
     /**
      * Get Mailbox status.
@@ -136,7 +136,7 @@ interface MailboxInterface extends \Countable, \IteratorAggregate
      *
      * @throws \Ddeboer\Imap\Exception\MessageMoveException
      */
-    public function move($numbers, self $mailbox): void;
+    public function move($numbers, self $mailbox);
 
     /**
      * Bulk copy messages.
@@ -146,5 +146,5 @@ interface MailboxInterface extends \Countable, \IteratorAggregate
      *
      * @throws \Ddeboer\Imap\Exception\MessageCopyException
      */
-    public function copy($numbers, self $mailbox): void;
+    public function copy($numbers, self $mailbox);
 }

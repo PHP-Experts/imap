@@ -268,7 +268,7 @@ final class Transcoder
      *
      * @return string
      */
-    public static function decode(string $text, string $fromCharset): string
+    public static function decode(string $text, string $fromCharset)
     {
         static $utf8Aliases = [
             'unicode-1-1-utf-8' => true,

@@ -16,7 +16,7 @@ final class Old implements ConditionInterface
      *
      * @return string
      */
-    public function toString(): string
+    public function toString()
     {
         return 'OLD';
     }

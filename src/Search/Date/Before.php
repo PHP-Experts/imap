@@ -17,7 +17,7 @@ final class Before extends AbstractDate
      *
      * @return string
      */
-    protected function getKeyword(): string
+    protected function getKeyword()
     {
         return 'BEFORE';
     }

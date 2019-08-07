@@ -59,7 +59,7 @@ final class ImapResource implements ImapResourceInterface
     /**
      * Clear last mailbox used cache.
      */
-    public function clearLastMailboxUsedCache(): void
+    public function clearLastMailboxUsedCache()
     {
         self::$lastMailboxUsedCache = null;
     }
@@ -67,7 +67,7 @@ final class ImapResource implements ImapResourceInterface
     /**
      * If connection is not currently in this mailbox, switch it to this mailbox.
      */
-    private function initMailbox(): void
+    private function initMailbox()
     {
         if (null === $this->mailbox || self::isMailboxOpen($this->mailbox, $this->resource)) {
             return;

@@ -36,7 +36,7 @@ interface PartInterface extends \RecursiveIterator
      *
      * @return int
      */
-    public function getNumber(): int;
+    public function getNumber();
 
     /**
      * Part charset.
@@ -106,14 +106,14 @@ interface PartInterface extends \RecursiveIterator
      *
      * @return string
      */
-    public function getContent(): string;
+    public function getContent();
 
     /**
      * Get decoded part content.
      *
      * @return string
      */
-    public function getDecodedContent(): string;
+    public function getDecodedContent();
 
     /**
      * Part structure.
@@ -127,7 +127,7 @@ interface PartInterface extends \RecursiveIterator
      *
      * @return string
      */
-    public function getPartNumber(): string;
+    public function getPartNumber();
 
     /**
      * Get an array of all parts for this message.
