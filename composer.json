@@ -1,5 +1,5 @@
 {
-    "name": "PHP-Experts/imap",
+    "name": "php-experts/imap",
     "description": "Object-oriented IMAP for PHP",
     "keywords": [
         "email",
